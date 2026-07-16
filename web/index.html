@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML + CSS Keyboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="manifest" href="./manifest.json">
+
+  <!-- PWA vzhled pro mobilní zařízení a tablety -->
+  <meta name="theme-color" content="#333333">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="stylesheet" href="./style.css?v=2.0">
+
+</head>
+
+<body>
+  <h1>HTML + CSS Keyboard</h1>
+
+  <!-- Ovládací panel pro připojení -->
+  <div class="connection-panel">
+    <input type="text" id="ws-ip" value="192.168.43.164:808" placeholder="IP:Port (např. 192.168.1.100:808)">
+    <button id="btn-connect">Připojit</button>
+    <button id="btn-disconnect" disabled>Odpojit</button>
+    <span id="connection-status" class="status--disconnected">Odpojeno</span>
+  </div>
+
+  <div class="keyboard">
+    <!-- Funkční klávesy -->
+    <div class="keyboard__row keyboard__row--h1">
+      <div data-key="27" class="key--word">
+        <span>esc</span>
+      </div>
+      <div data-key="112" class="key--fn">
+        <span>F1</span>
+      </div>
+      <div data-key="113" class="key--fn">
+        <span>F2</span>
+      </div>
+      <div data-key="114" class="key--fn">
+        <span>F3</span>
+      </div>
+      <div data-key="115" class="key--fn">
+        <span>F4</span>
+      </div>
+      <div data-key="116" class="key--fn">
+        <span>F5</span>
+      </div>
+      <div data-key="117" class="key--fn">
+        <span>F6</span>
+      </div>
+      <div data-key="118" class="key--fn">
+        <span>F7</span>
+      </div>
+      <div data-key="119" class="key--fn">
+        <span>F8</span>
+      </div>
+      <div data-key="120" class="key--fn">
+        <span>F9</span>
+      </div>
+      <div data-key="121" class="key--fn">
+        <span>F10</span>
+      </div>
+      <div data-key="122" class="key--fn">
+        <span>F11</span>
+      </div>
+      <!-- NOVÝ STAV -->
+      <div data-key="123" class="key--fn">
+        <span>F12</span>
+      </div>
+      <div data-key="46" class="key--word">
+        <span>Delete</span>
+      </div>
+    </div>
+
+    <!-- Číselný řádek (český) -->
+    <div class="keyboard__row">
+      <div class="key--double" data-key="192" data-char=";°">
+        <div>°</div>
+        <div>;</div>
+      </div>
+      <div class="key--double" data-key="49" data-char="+1">
+        <div>1</div>
+        <div>+</div>
+      </div>
+      <div class="key--double" data-key="50" data-char="ě2Ě">
+        <div>2</div>
+        <div>ě</div>
+      </div>
+      <div class="key--double" data-key="51" data-char="š3Š">
+        <div>3</div>
+        <div>š</div>
+      </div>
+      <div class="key--double" data-key="52" data-char="č4Č">
+        <div>4</div>
+        <div>č</div>
+      </div>
+      <div class="key--double" data-key="53" data-char="ř5Ř">
+        <div>5</div>
+        <div>ř</div>
+      </div>
+      <div class="key--double" data-key="54" data-char="ž6Ž">
+        <div>6</div>
+        <div>ž</div>
+      </div>
+      <div class="key--double" data-key="55" data-char="ý7Ý">
+        <div>7</div>
+        <div>ý</div>
+      </div>
+      <div class="key--double" data-key="56" data-char="á8Á">
+        <div>8</div>
+        <div>á</div>
+      </div>
+      <div class="key--double" data-key="57" data-char="í9Í">
+        <div>9</div>
+        <div>í</div>
+      </div>
+      <div class="key--double" data-key="48" data-char="é0É">
+        <div>0</div>
+        <div>é</div>
+      </div>
+      <div class="key--double" data-key="187" data-char="=%">
+        <div>%</div>
+        <div>=</div>
+      </div>
+      <div class="key--double" data-key="191" data-char="´ˇ">
+        <div>ˇ</div>
+        <div>´</div>
+      </div>
+      <div class="key--bottom-right key--word key--w4" data-key="8">
+        <span>backspace</span>
+      </div>
+    </div>
+
+    <!-- První písmenný řádek (QWERTZ) -->
+    <div class="keyboard__row">
+      <div class="key--bottom-left key--word key--w4" data-key="9">
+        <span>tab</span>
+      </div>
+      <div class="key--letter" data-char="Q">Q</div>
+      <div class="key--letter" data-char="W">W</div>
+      <div class="key--letter" data-char="E">E</div>
+      <div class="key--letter" data-char="R">R</div>
+      <div class="key--letter" data-char="T">T</div>
+      <div class="key--letter" data-char="Z">Z</div>
+      <div class="key--letter" data-char="U">U</div>
+      <div class="key--letter" data-char="I">I</div>
+      <div class="key--letter" data-char="O">O</div>
+      <div class="key--letter" data-char="P">P</div>
+      <div class="key--double" data-key="219" data-char="ú/Ú">
+        <div>/</div>
+        <div>ú</div>
+      </div>
+      <div class="key--double" data-key="221" data-char=")(_">
+        <div>(</div>
+        <div>)</div>
+      </div>
+      <div class="key--double" data-key="220" data-char="¨'">
+        <div>¨</div>
+        <div>'</div>
+      </div>
+    </div>
+
+    <!-- Druhý písmenný řádek -->
+    <div class="keyboard__row">
+      <div class="key--bottom-left key--word key--w5" data-key="20">
+        <span>caps lock</span>
+      </div>
+      <div class="key--letter" data-char="A">A</div>
+      <div class="key--letter" data-char="S">S</div>
+      <div class="key--letter" data-char="D">D</div>
+      <div class="key--letter" data-char="F">F</div>
+      <div class="key--letter" data-char="G">G</div>
+      <div class="key--letter" data-char="H">H</div>
+      <div class="key--letter" data-char="J">J</div>
+      <div class="key--letter" data-char="K">K</div>
+      <div class="key--letter" data-char="L">L</div>
+      <div class="key--double" data-key="186" data-char="ů\&quot;Ů">
+        <div>"</div>
+        <div>ů</div>
+      </div>
+      <div class="key--double" data-key="222" data-char="§!">
+        <div>!</div>
+        <div>§</div>
+      </div>
+      <div class="key--bottom-right key--word key--w5" data-key="13">
+        <span>return</span>
+      </div>
+    </div>
+
+    <!-- Třetí písmenný řádek -->
+    <div class="keyboard__row">
+      <div class="key--bottom-left key--word key--w6" data-key="16">
+        <span>shift</span>
+      </div>
+      <div class="key--letter" data-char="Y">Y</div>
+      <div class="key--letter" data-char="X">X</div>
+      <div class="key--letter" data-char="C">C</div>
+      <div class="key--letter" data-char="V">V</div>
+      <div class="key--letter" data-char="B">B</div>
+      <div class="key--letter" data-char="N">N</div>
+      <div class="key--letter" data-char="M">M</div>
+      <div class="key--double" data-key="188" data-char=",?">
+        <div>?</div>
+        <div>,</div>
+      </div>
+      <div class="key--double" data-key="190" data-char=".">
+        <div>:</div>
+        <div>.</div>
+      </div>
+      <div class="key--double" data-key="189" data-char="-_">
+        <div>_</div>
+        <div>-</div>
+      </div>
+      <div class="key--bottom-right key--word key--w6" data-key="16-R">
+        <span>shift</span>
+      </div>
+    </div>
+
+    <!-- Spodní funkční řádek se šipkami a Delete -->
+    <div class="keyboard__row keyboard__row--h3">
+      <div class="key--bottom-left key--word">
+        <span></span>
+      </div>
+      <div class="key--bottom-left key--word key--w1" data-key="17">
+        <span>control</span>
+      </div>
+      <div class="key--bottom-left key--word key--w1" data-key="18">
+        <span>Alt</span>
+      </div>
+      <div class="key--bottom-right key--word key--w3" data-key="91">
+        <span>Windows</span>
+      </div>
+      <div class="key--double key--right key--space" data-key="32" data-char=" ">
+        &nbsp;
+      </div>
+      <div class="key--bottom-left key--word key--w3" data-key="93-R">
+        <span>Windows</span>
+      </div>
+      <div class="key--bottom-left key--word key--w1" data-key="18-R">
+        <span>Alt</span>
+      </div>
+
+
+      <!-- Šipka doleva -->
+      <div data-key="37" class="key--arrow">
+        <span>&#9664;</span>
+      </div>
+
+      <!-- Svislé šipky rozdělené -->
+      <div class="key--arrow-stack">
+        <div data-key="38" class="key--arrow-half">▲</div>
+        <div data-key="40" class="key--arrow-half">▼</div>
+      </div>
+
+      <!-- Šipka doprava -->
+      <div data-key="39" class="key--arrow">
+        <span>&#9654;</span>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+
+</body>
+
+</html>

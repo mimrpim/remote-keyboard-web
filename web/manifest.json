@@ -1,0 +1,10 @@
+{
+  "short_name": "WS Keyboard",
+  "name": "WebSocket Virtual Keyboard",
+  "icons": [],
+  "start_url": "./index.html",
+  "background_color": "#111111",
+  "theme_color": "#333333",
+  "display": "standalone",
+  "orientation": "landscape"
+}

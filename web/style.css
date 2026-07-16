@@ -1,0 +1,228 @@
+h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: monospace;
+  padding: 0.7em;
+}
+
+.keyboard {
+    text-align: center;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.keyboard__row {
+    display: inline-block;
+    height: 3em;
+    margin: 0.2em;
+}
+
+.keyboard__row--h1 {
+    height: 1.7em;
+    line-height: 1.4em;
+}
+
+.keyboard__row--h3 {
+    height: 3.3em;
+}
+
+.keyboard__row > * {
+    position: relative;
+    background: #333;
+    text-align: center;
+    color: #eee;
+    float: left;
+    border-radius: 0.3em;
+    margin: 0.2em;
+    padding: 0.2em;
+    width: 3.3em;
+    height: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-user-select: none;
+    border: 1px solid #444;
+    box-shadow: 0 0.2em 0 0.05em #222;
+    border-bottom-color: #555;
+}
+
+.keyboard__row--h1 > div {
+    width: 3.5em;
+}
+
+.keyboard__row > div[data-pressed],
+.keyboard__row > div:active {
+    background: #2a2a2a;
+    color: #aaa;
+    position: relative;
+    top: 0.2em;
+    box-shadow: 0 0 0 0.05em black;
+}
+
+.key--w3 {
+    width: 4.6em;
+}
+
+.key--w4 {
+    width: 6em;
+}
+
+.key--w5 {
+    width: 6.5em;
+}
+
+.key--w6 {
+    width: 8.3em;
+}
+
+.key--space {
+    width: 18em;
+}
+
+.key--double > * {
+    padding-top: 0.1em;
+}
+
+.key--letter {
+    line-height: 2.8em;
+}
+
+.key--bottom-left > * {
+    position: absolute;
+    text-align: left;
+    bottom: 0.4em;
+    left: 0.4em;
+}
+
+.key--bottom-right > * {
+    position: absolute;
+    text-align: right;
+    bottom: 0.4em;
+    right: 0.4em;
+}
+
+.key--fn > * {
+    font-size: 0.6em;
+    line-height: 1em;
+    padding-top: 1.2em;
+    padding-right: 0.2em;
+    text-align: right;
+    float: right;
+}
+
+.key--word > * {
+    font-size: 0.8em;
+}
+
+.key--arrow--tall > *,
+.key--arrow > * {
+    font-size: 0.5em;
+    line-height: 3em;
+}
+
+.key--arrow {
+    height: 1.8em;
+    margin-top: 1.7em;
+    line-height: 0.5em;
+}
+
+.key--arrow--tall > * {
+    padding-top: 0.2em;
+}
+
+.keyboard > .keyboard__row {
+    text-align: center;
+}
+
+/* --- OVLÁDACÍ PANEL PŘIPOJENÍ --- */
+.connection-panel {
+  background: #222;
+  padding: 12px;
+  margin: 10px auto 20px auto;
+  border-radius: 8px;
+  max-width: 600px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  font-family: sans-serif;
+}
+
+.connection-panel input {
+  background: #333;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: monospace;
+  flex-grow: 1;
+  font-size: 14px;
+}
+
+.connection-panel button {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.connection-panel button:hover:not(:disabled) {
+  background: #555;
+}
+
+.connection-panel button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#connection-status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status--disconnected { background: #5a2a2a; color: #ff9999; }
+.status--connecting { background: #5a5a2a; color: #ffff99; }
+.status--connected { background: #2a5a2a; color: #99ff99; }
+
+/* --- ROZDĚLENÉ ŠIPKY (UP / DOWN) --- */
+.key--arrow-stack {
+  display: flex;
+  flex-direction: column;
+  width: 3.3em;
+  height: 100%;
+  float: left;
+  margin: 0.2em;
+  gap: 0.1em;
+}
+
+.key--arrow-half {
+  background: #333;
+  color: #eee;
+  border-radius: 0.3em;
+  height: calc(50% - 0.1em);
+  line-height: 1.1em;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #444;
+  box-shadow: 0 0.1em 0 0.05em #222;
+  box-sizing: border-box;
+  font-size: 0.7em;
+  -webkit-user-select: none;
+}
+
+.key--arrow-half[data-pressed],
+.key--arrow-half:active {
+  background: #2a2a2a;
+  color: #aaa;
+  position: relative;
+  top: 0.1em;
+  box-shadow: 0 0 0 0.05em black;
+}
